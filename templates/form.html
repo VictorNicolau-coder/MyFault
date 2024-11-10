@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+<body>
+    <div>
+        <img src="{{ url_for('static', filename='images/neyLesionado.jpg') }}" width="286" height="190">
+        <h1>Dia afastado por "lesão"</h1>
+        <form action="/submit-date" method="POST">
+            <label for="cadeira">Cadeira: </label>
+            <select id="cadeira" name="cadeira" required>
+                <option value="" selected disabled>Escolha uma opção</option>
+                <option value="Lógica matemática">Lógica matemática</option>
+                <option value="Matemática discreta">Matemática discreta</option>
+                <option value="APII">Algoritmos e lógica de programação II</option>
+                <option value="Libras">Libras</option>
+                <option value="ADM">Introdução à administração</option>
+                <option value="Método científico">Método científico</option>
+            </select>
+            <br>
+            <label for="dia-falta">Dia da falta: </label>
+            <input type="date" id="dia-falta" name="dia-falta" value="2024-11-07" required/>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
